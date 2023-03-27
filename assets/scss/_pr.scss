@@ -2,6 +2,7 @@
 // ? @@@@@@@@@@@@@@@@@@@@@@[  example start  ]@@@@@@@@@@@@@@@@@@@@@@
     @include media-breakpoint(basic) {
         .topNavbar {
+            z-index: 1021;
             & .navbarTopRow {
                 & .logo {
                     color: $black;
@@ -48,7 +49,6 @@
                             display: flex;
                             align-items: center;
                             & img {
-                                fill: #4d4d4d;
                             }
                             & span {
                                 font-size: 14px;
@@ -59,6 +59,21 @@
                             }
                             &:hover {
                                 background-color: lighten($gray-500, 24);
+                            }
+                            &.active {
+                                background-color: lighten($theme1, 57);
+                                pointer-events: auto;
+                                & span {
+                                    color: $theme1;
+                                }
+                                & img {
+                                    &.defaultImg {
+                                        display: none;
+                                    }
+                                    &.activeImg {
+                                        display: block !important;
+                                    }
+                                }
                             }
                         }
                     }
@@ -98,14 +113,21 @@
                 & .backAnchor {
                     display: inline-flex;
                     align-items: center;
-                    & img {}
+                    & img {
+                        margin-right: 8px;
+                    }
                     & .productName {
                         font-size: 18px;
                         line-height: 26px;
                         font-weight: 500;
                         color: $black;
-                        display: block;
-                        margin: 0 2px 0 8px;
+                        margin-right: 2px;
+                        text-overflow: ellipsis;
+                        word-break: break-word;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                        display: -webkit-box;
+                        overflow: hidden;
                     }
                     & .productQty {
                         font-size: 14px;
@@ -116,18 +138,71 @@
                 & .sortDropdown {
                     & .dropdown-toggle {
                         & span {
-                            padding-right: 16px;
+                            padding-right: 8px;
                             font-size: 14px;
                             line-height: 20px;
                             font-weight: 500;
                             color: $black;
                             &:last-child {
                                 color: $theme1;
+                                padding-right: 20px;
                             }
                         }
                         &::after {
                             border: 0;
-                            
+                            background-image: url(./../img/svg/downArrow.svg);
+                            height: 20px;
+                            width: 20px;
+                            background-size: 20px;
+                            top: 50%;
+                            position: absolute;
+                            transform: translateY(-50%);
+                            right: 0;
+                        }
+                    }
+                    & .dropdown-menu {
+                        width: 13rem;
+                        & .radioBox {
+                            display: flex;
+                            align-items: center;
+                            & .radioInput {
+                                height: 18px;
+                                width: 18px;
+                            }
+                            & .formLabel {
+                                font-size: 16px;
+                                line-height: 24px;
+                                color: $black;
+                                font-weight: 500;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menuOffcanvas {
+            padding: 24px 16px 0 16px;
+            border: 0 !important;
+            & .offcanvas-header {
+                padding-bottom: 16px !important;
+                & .offcanvas-title {
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 26px;
+                    color: $black;
+                }
+                border-bottom: 1px solid $gray-200;
+            }
+            & .offcanvas-body {
+                & .menuLinks {
+                    & .menuLinkItem {
+                        margin-top: 16px;
+                        & .linkAnchor {
+                            font-size: 16px;
+                            line-height: 24px;
+                            color: $black;
+                            font-weight: 500;
                         }
                     }
                 }
@@ -255,15 +330,485 @@
     @include media-breakpoint-up(xxl) {}
 
 
-    @include media-breakpoint-down(xxl) {}
+    @include media-breakpoint-down(xxl) {
+        .topNavbar {
+            & .navbarTopRow {
+                & .logo {
+                    & img {
+                    }
+                    & span {
+                    }
+                }
+                & .serachBox {
+                    & .form-control {
+                    }
+                    & .searchIcon { 
+                    }
+                }
+                & .navBtnBox {
+                    & .navBtn {
+                        & .buttonAnchor {
+                            & img {
+                            }
+                            & span {
+                            }
+                            &:hover {
+                            }
+                            &.active {
+                                & span {
+                                }
+                                & img {
+                                    &.defaultImg {
+                                    }
+                                    &.activeImg {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .navBarBottomRow {
+                & .navLinks {
+                    & .navLinkItem {
+                        & .navLinkAnchor {
+                            &:hover {
+                            }
+                        }
+                    }
+                }
+                & .menuBtn {
+                }
+            }
+            & .navbarThirdRow {
+                & .backAnchor {
+                    & img {
+                    }
+                    & .productName {
+                    }
+                    & .productQty {
+                    }
+                }
+                & .sortDropdown {
+                    & .dropdown-toggle {
+                        & span {
+                            &:last-child {
+                            }
+                        }
+                        &::after {
+                        }
+                    }
+                    & .dropdown-menu {
+                        & .radioBox {
+                            & .radioInput {
+                            }
+                            & .formLabel {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menuOffcanvas {
+            & .offcanvas-header {
+                & .offcanvas-title {
+                }
+            }
+            & .offcanvas-body {
+                & .menuLinks {
+                    & .menuLinkItem {
+                        & .linkAnchor {
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-    @include media-breakpoint-down(xl) {}
+    @include media-breakpoint-down(xl) {
+        .topNavbar {
+            & .navbarTopRow {
+                & .logo {
+                    & img {
+                    }
+                    & span {
+                    }
+                }
+                & .serachBox {
+                    & .form-control {
+                    }
+                    & .searchIcon { 
+                    }
+                }
+                & .navBtnBox {
+                    & .navBtn {
+                        & .buttonAnchor {
+                            & img {
+                            }
+                            & span {
+                            }
+                            &:hover {
+                            }
+                            &.active {
+                                & span {
+                                }
+                                & img {
+                                    &.defaultImg {
+                                    }
+                                    &.activeImg {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .navBarBottomRow {
+                & .navLinks {
+                    & .navLinkItem {
+                        & .navLinkAnchor {
+                            &:hover {
+                            }
+                        }
+                    }
+                }
+                & .menuBtn {
+                }
+            }
+            & .navbarThirdRow {
+                & .backAnchor {
+                    & img {
+                    }
+                    & .productName {
+                    }
+                    & .productQty {
+                    }
+                }
+                & .sortDropdown {
+                    & .dropdown-toggle {
+                        & span {
+                            &:last-child {
+                            }
+                        }
+                        &::after {
+                        }
+                    }
+                    & .dropdown-menu {
+                        & .radioBox {
+                            & .radioInput {
+                            }
+                            & .formLabel {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menuOffcanvas {
+            & .offcanvas-header {
+                & .offcanvas-title {
+                }
+            }
+            & .offcanvas-body {
+                & .menuLinks {
+                    & .menuLinkItem {
+                        & .linkAnchor {
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-    @include media-breakpoint-down(lg) {}
+    @include media-breakpoint-down(lg) {
+        .topNavbar {
+            & .navbarTopRow {
+                & .logo {
+                    & img {
+                    }
+                    & span {
+                    }
+                }
+                & .serachBox {
+                    & .form-control {
+                    }
+                    & .searchIcon { 
+                    }
+                }
+                & .navBtnBox {
+                    & .navBtn {
+                        & .buttonAnchor {
+                            & img {
+                            }
+                            & span {
+                            }
+                            &:hover {
+                            }
+                            &.active {
+                                & span {
+                                }
+                                & img {
+                                    &.defaultImg {
+                                    }
+                                    &.activeImg {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .navBarBottomRow {
+                & .navLinks {
+                    & .navLinkItem {
+                        & .navLinkAnchor {
+                            &:hover {
+                            }
+                        }
+                    }
+                }
+                & .menuBtn {
+                }
+            }
+            & .navbarThirdRow {
+                & .backAnchor {
+                    & img {
+                    }
+                    & .productName {
+                    }
+                    & .productQty {
+                    }
+                }
+                & .sortDropdown {
+                    & .dropdown-toggle {
+                        & span {
+                            &:last-child {
+                            }
+                        }
+                        &::after {
+                        }
+                    }
+                    & .dropdown-menu {
+                        & .radioBox {
+                            & .radioInput {
+                            }
+                            & .formLabel {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menuOffcanvas {
+            width: 100% !important;
+            & .offcanvas-header {
+                & .offcanvas-title {
+                }
+            }
+            & .offcanvas-body {
+                & .menuLinks {
+                    & .menuLinkItem {
+                        & .linkAnchor {
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-    @include media-breakpoint-down(md) {}
+    @include media-breakpoint-down(md) {
+        .topNavbar {
+            & .navbarTopRow {
+                & .logo {
+                    & img {
+                    }
+                    & span {
+                    }
+                }
+                & .serachBox {
+                    & .form-control {
+                    }
+                    & .searchIcon { 
+                    }
+                }
+                & .navBtnBox {
+                    & .navBtn {
+                        & .buttonAnchor {
+                            & img {
+                            }
+                            & span {
+                            }
+                            &:hover {
+                            }
+                            &.active {
+                                & span {
+                                }
+                                & img {
+                                    &.defaultImg {
+                                    }
+                                    &.activeImg {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .navBarBottomRow {
+                & .navLinks {
+                    & .navLinkItem {
+                        & .navLinkAnchor {
+                            &:hover {
+                            }
+                        }
+                    }
+                }
+                & .menuBtn {
+                }
+            }
+            & .navbarThirdRow {
+                & .backAnchor {
+                    & img {
+                    }
+                    & .productName {
+                    }
+                    & .productQty {
+                    }
+                }
+                & .sortDropdown {
+                    & .dropdown-toggle {
+                        & span {
+                            &:last-child {
+                            }
+                        }
+                        &::after {
+                        }
+                    }
+                    & .dropdown-menu {
+                        & .radioBox {
+                            & .radioInput {
+                            }
+                            & .formLabel {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menuOffcanvas {
+            & .offcanvas-header {
+                & .offcanvas-title {
+                }
+            }
+            & .offcanvas-body {
+                & .menuLinks {
+                    & .menuLinkItem {
+                        & .linkAnchor {
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-    @include media-breakpoint-down(sm) {}
+    @include media-breakpoint-down(sm) {
+        .topNavbar {
+            & .navbarTopRow {
+                & .logo {
+                    & img {
+                    }
+                    & span {
+                    }
+                }
+                & .serachBox {
+                    & .form-control {
+                    }
+                    & .searchIcon { 
+                    }
+                }
+                & .navBtnBox {
+                    & .navBtn {
+                        & .buttonAnchor {
+                            & img {
+                            }
+                            & span {
+                            }
+                            &:hover {
+                            }
+                            &.active {
+                                & span {
+                                }
+                                & img {
+                                    &.defaultImg {
+                                    }
+                                    &.activeImg {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .navBarBottomRow {
+                & .navLinks {
+                    & .navLinkItem {
+                        & .navLinkAnchor {
+                            &:hover {
+                            }
+                        }
+                    }
+                }
+                & .menuBtn {
+                }
+            }
+            & .navbarThirdRow {
+                & .backAnchor {
+                    & img {
+                    }
+                    & .productName {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                    & .productQty {
+                        font-size: 12px;
+                        line-height: 16px;
+                    }
+                }
+                & .sortDropdown {
+                    & .dropdown-toggle {
+                        & span {
+                            &:last-child {
+                            }
+                        }
+                        &::after {
+                        }
+                    }
+                    & .dropdown-menu {
+                        & .radioBox {
+                            & .radioInput {
+                            }
+                            & .formLabel {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menuOffcanvas {
+            & .offcanvas-header {
+                & .offcanvas-title {
+                }
+            }
+            & .offcanvas-body {
+                & .menuLinks {
+                    & .menuLinkItem {
+                        & .linkAnchor {
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 
 [data-bs-theme=dark] {
