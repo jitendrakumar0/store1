@@ -159,6 +159,10 @@
                 color: $gray-600;
                 transition: all 0.3s;
                 padding: 6px 16px;
+                font-size: 14px;
+                & .pageImage {
+                    height: 20px;
+                }
                 &.active {
                     & .pageImg1 {
                         display: none !important;
@@ -168,6 +172,21 @@
                     }
                     color: $theme1 !important;
                     background-color: rgba($theme1, 0.1);
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm){
+    .fotterFixed {
+        padding: 10px 12px;
+        & .innerFooter {
+            & .fixedBtn {
+                padding: 4px 12px;
+                font-size: 12px;
+                & .pageImage {
+                    height: 20px;
                 }
             }
         }
