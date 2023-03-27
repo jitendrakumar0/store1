@@ -2,6 +2,7 @@
 // ? @@@@@@@@@@@@@@@@@@@@@@[  example start  ]@@@@@@@@@@@@@@@@@@@@@@
     @include media-breakpoint(basic) {
         .topNavbar {
+            z-index: 1021;
             & .navbarTopRow {
                 & .logo {
                     color: $black;
