@@ -65,41 +65,9 @@
     @include media-breakpoint-down(lg) {}
 
     @include media-breakpoint-down(md) {
-        & .categoriesSection {
-            & .innerSection {
-                & .categorieCard {
-                    & .card-body {
-                        & .itemImg{
-                            & img {
-                            }
-                        }
-                        & .itemTitle {
-                            font-size: 12px;
-                            line-height: 17px;
-                        }
-                    }
-                }
-            }
-        }
     }
 
     @include media-breakpoint-down(sm) {
-        & .categoriesSection {
-            & .innerSection {
-                & .categorieCard {
-                    & .card-body {
-                        & .itemImg{
-                            & img {
-                            }
-                        }
-                        & .itemTitle {
-                            font-size: 10px;
-                            line-height: 14px;
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 // ! @@@@@@@@@@@@@@@@@@@@@@[  Categories Page End  ]@@@@@@@@@@@@@@@@@@@@@@
@@ -178,20 +146,20 @@
     }
 }
 
-@include media-breakpoint-down(sm){
-    .fotterFixed {
-        padding: 10px 12px;
-        & .innerFooter {
-            & .fixedBtn {
-                padding: 4px 12px;
-                font-size: 12px;
-                & .pageImage {
-                    height: 20px;
-                }
-            }
-        }
-    }
-}
+// @include media-breakpoint-down(sm){
+//     .fotterFixed {
+//         padding: 10px 12px;
+//         & .innerFooter {
+//             & .fixedBtn {
+//                 padding: 4px 12px;
+//                 font-size: 12px;
+//                 & .pageImage {
+//                     height: 20px;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 
 
