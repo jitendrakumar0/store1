@@ -1,6 +1,138 @@
 
 // ? @@@@@@@@@@@@@@@@@@@@@@[  example start  ]@@@@@@@@@@@@@@@@@@@@@@
     @include media-breakpoint(basic) {
+        .topNavbar {
+            & .navbarTopRow {
+                & .logo {
+                    color: $black;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    & img {
+                        max-width: 160px;
+                        width: auto;
+                        object-fit: contain;
+                        height: 52px;
+                        border-radius: 6px;
+                    }
+                    & span {
+                        font-size: 25px;
+                        margin-left: 16px;
+                    }
+                }
+                & .serachBox {
+                    & .form-control {
+                        width: 100%;
+                        background: #f2f2f2;
+                        color: #4d4d4d;
+                        opacity: 1;
+                        border: 1px solid rgba(0,0,0,0);
+                        border-radius: 6px;
+                        padding: 7px 28px 6px 40px;
+                        font-size: 16px;
+                        line-height: 26px;
+                    }
+                    & .searchIcon {    
+                        height: 20px;
+                        width: 20px;
+                        position: absolute;
+                        top: 10px;
+                        left: 12px;
+                    }
+                }
+                & .navBtnBox {
+                    & .navBtn {
+                        & .buttonAnchor {
+                            border-radius: 20px;
+                            padding: 6px 10px;
+                            display: flex;
+                            align-items: center;
+                            & img {
+                                fill: #4d4d4d;
+                            }
+                            & span {
+                                font-size: 14px;
+                                font-weight: 500;
+                                line-height: 20px;
+                                color: #4d4d4d;
+                                margin-left: 8px;
+                            }
+                            &:hover {
+                                background-color: lighten($gray-500, 24);
+                            }
+                        }
+                    }
+                }
+            }
+            & .navBarBottomRow {
+                & .navLinks {
+                    & .navLinkItem {
+                        & .navLinkAnchor {
+                            font-size: 16px;
+                            line-height: 24px;
+                            text-decoration: none;
+                            color: $black;
+                            padding: 4px 12px;
+                            border-radius: 20px;
+                            white-space: nowrap;
+                            font-weight: 500;
+                            &:hover {
+                                background-color: lighten($gray-500, 24);
+                            }
+                        }
+                    }
+                }
+                & .menuBtn {
+                    position: absolute;
+                    right: 0;
+                    width: 50px;
+                    background: white;
+                    top: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    cursor: pointer;
+                }
+            }
+            & .navbarThirdRow {
+                & .backAnchor {
+                    display: inline-flex;
+                    align-items: center;
+                    & img {}
+                    & .productName {
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-weight: 500;
+                        color: $black;
+                        display: block;
+                        margin: 0 2px 0 8px;
+                    }
+                    & .productQty {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $black;
+                    }
+                }
+                & .sortDropdown {
+                    & .dropdown-toggle {
+                        & span {
+                            padding-right: 16px;
+                            font-size: 14px;
+                            line-height: 20px;
+                            font-weight: 500;
+                            color: $black;
+                            &:last-child {
+                                color: $theme1;
+                            }
+                        }
+                        &::after {
+                            border: 0;
+                            
+                        }
+                    }
+                }
+            }
+        }
         .productFluidContainer{
             & .productContainer{
                 & .productMainHeading{
