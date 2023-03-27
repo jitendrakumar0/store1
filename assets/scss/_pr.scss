@@ -3,6 +3,7 @@
     @include media-breakpoint(basic) {
         .topNavbar {
             z-index: 1021;
+            border-bottom: 1px solid $gray-200;
             & .navbarTopRow {
                 & .logo {
                     color: $black;
@@ -575,8 +576,12 @@
                     & img {
                     }
                     & .productName {
+                        font-size: 16px;
+                        line-height: 24px;
                     }
                     & .productQty {
+                        font-size: 12px;
+                        line-height: 16px;
                     }
                 }
                 & .sortDropdown {
@@ -766,12 +771,8 @@
                     & img {
                     }
                     & .productName {
-                        font-size: 16px;
-                        line-height: 24px;
                     }
                     & .productQty {
-                        font-size: 12px;
-                        line-height: 16px;
                     }
                 }
                 & .sortDropdown {
