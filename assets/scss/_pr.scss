@@ -113,6 +113,11 @@
                         color: $black;
                     }
                 }
+                & .sortDropdown {
+                    & .dropdown-toggle {
+                        
+                    }
+                }
             }
         }
         .productFluidContainer{
