@@ -26,6 +26,107 @@ nav {
         }
     }
 }
+.heroSection {
+    background-color: white;
+    position: relative;
+    & .carsoulSidePart {
+        max-height: 552px;
+        position: sticky;
+        top: 136px;
+        overflow: hidden;
+        flex-direction: row;
+        & .slideLeft {
+            padding-right: 16px;
+            width: 96px !important;
+            & .mySwiper {
+                height: 100%;
+                width: 100% !important;
+                & .swiper-wrapper {
+                    width: 80px;
+                    flex-direction: column;
+                    & .swiper-slide {
+                        width: 100% !important;
+                        height: 100px !important;
+                        border: 1px solid #e6e6e6;
+                        cursor: pointer;
+                        &.swiper-slide-thumb-active {
+                            border: 2px solid  #146EB4;
+                        }
+                        & img {
+                            object-fit: contain;
+                            object-position: center;
+                        }
+                    }
+                }
+            }
+        }
+        & .slideRight {
+            width: calc(100% - 96px);
+            & .mySwiper2 {
+                height: 100% !important;
+                border: 1px solid #e6e6e6;
+                position: relative;
+                & .sharebtn {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    cursor: pointer;
+                    z-index: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid #e6e6e6;
+                    box-shadow: 0 2px 4px rgba(26,24,30,.24);
+                    & img {
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
+                & .swiper-wrapper {
+                    & .swiper-slide {
+                        cursor: zoom-in;
+                        & img {
+                            object-fit: contain;
+                            object-position: top center;
+                        }
+                    }
+                }
+                & .swiper-button-next {
+    
+                }
+                & .swiper-button-prev {
+    
+                }
+            }
+        }
+    }
+    & .rightSidePart {
+        padding: 0px 0px 32px 32px;
+        & .productHeading {
+            text-transform: capitalize;
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 400;
+            color: #1a181e;
+        }
+        & .startOuter {
+            & .startInner {
+                gap: 4px;
+                & .starImgOuter {
+                    width: 20px;
+                    height: 20px;
+                    & .img {
+    
+                    }
+                }
+            }
+        }
+    }
+}
 
 [data-page-name=products] {
     @include media-breakpoint(basic) {
