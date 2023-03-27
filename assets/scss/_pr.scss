@@ -211,6 +211,9 @@
         }
         .productFluidContainer{
             & .productContainer{
+                & .stickySectionHeader {
+                    top: 123px;
+                }
                 & .productMainHeading{
                     flex-direction: row;
                     justify-content: space-between;

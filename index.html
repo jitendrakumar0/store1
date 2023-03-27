@@ -105,32 +105,39 @@
         <main class="container-fluid">
             <div class="row mainInner">
                 <div class="col-12 px-0 flex-fill" data-page-name="landing">
-                    <navbar class="container-fluid navbar topNavbar py-3">
+                    <navbar class="container-fluid navbar topNavbar py-3 sticky-top bg-white">
                         <div class="container">
-                            <div class="row navbarTopRow w-100 align-items-center justify-content-between mx-0 pb-3">
+                            <div class="row navbarTopRow w-100 align-items-center justify-content-between mx-0 pb-lg-3">
                                 <div class="col-auto px-0">
                                     <a href="index.html" class="logo">
                                         <img src="./assets/img/logo/logo.webp" alt="Logo">
                                         <span>Standard Store</span>
                                     </a>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-auto d-lg-none">
+                                    <div class="menuBtn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
+                                        <img src="./assets/img/svg/menuIcon.svg" alt="menu icon">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 pt-3 pt-lg-0">
                                     <div class="serachBox position-relative">
                                         <input type="text" class="form-control shadow-none" placeholder="Search for products...">
                                         <img src="./assets/img/svg/search.svg" class="searchIcon" alt="search icon">
                                     </div>
                                 </div>
-                                <div class="col-auto px-0">
+                                <div class="col-auto px-0 d-none d-lg-block">
                                     <ul class="m-0 p-0 list-unstyled navBtnBox d-flex align-items-center">
                                         <li class="navBtn me-1">
                                             <a href="javascript:;" class="buttonAnchor">
-                                                <img src="./assets/img/svg/categoryIcon.svg" alt="">
+                                                <img src="./assets/img/svg/categoryIcon.svg" class="defaultImg" alt="">
+                                                <img src="./assets/img/svg/categoryIconActive.svg" class="activeImg d-none" alt="">
                                                 <span>Categories</span>
                                             </a>
                                         </li>
                                         <li class="navBtn me-1">
                                             <a href="javascript:;" class="buttonAnchor">
-                                                <img src="./assets/img/svg/bagIcon.svg" alt="">
+                                                <img src="./assets/img/svg/bagIcon.svg" class="defaultImg" alt="">
+                                                <img src="./assets/img/svg/bagIconActive.svg" class="activeImg d-none"  alt="">
                                                 <span>Bag</span>
                                             </a>
                                         </li>
@@ -143,7 +150,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row mx-0 navBarBottomRow w-100 overflow-hidden position-relative">
+                            <div class="row mx-0 navBarBottomRow w-100 overflow-hidden position-relative d-none d-lg-flex">
                                 <div class="col-12 px-0">
                                     <ul class="m-0 p-0 list-unstyled d-flex align-items-center navLinks">
                                         <li class="navLinkItem"><a class="navLinkAnchor" href="javascript:;">Cold Pressed Oils</a></li>
@@ -163,36 +170,14 @@
                                         <li class="navLinkItem"><a class="navLinkAnchor" href="javascript:;">Cold</a></li>
                                     </ul>
                                 </div>
-                                <div class="menuBtn">
+                                <div class="menuBtn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
                                     <img src="./assets/img/svg/menuIcon.svg" alt="menu icon">
                                 </div>
                             </div>
-                            <!-- <div class="row mx-0 navbarThirdRow w-100">
-                                <div class="col">
-                                    <a href="index.html" class="backAnchor">
-                                        <img src="./assets/img/svg/rightArrow.svg" alt="rightArrow">
-                                        <span class="productName">Cold Pressed Oils</span>
-                                        <span class="productQty">(6 items)</span>
-                                    </a>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="dropdown sortDropdown">
-                                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span>Sort by</span>
-                                            <span>Featured</span>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </navbar>
 
-                    <div class="container-fluid heroSection">
+                    <div class="container-fluid heroSection pt-3">
                         <div class="container heroSectionInner">
                             <div class="row">
                                 <div class="col-12">
@@ -333,130 +318,218 @@
                         </div>
                     </div>
                     <hr class="bigSectionDivider">
-                    <div class="container-fluid productFluidContainer pb-5">
+                    <div class="container-fluid productFluidContainer">
                         <div class="container productContainer">
-                            <div class="row py-5">
-                                <div class="col-12">
+                            <div class="row py-3 mb-3">
+                                <div class="col-12 sticky-top bg-white stickySectionHeader">
                                     <div class="productMainHeading">Cold Pressed Oils</div>
                                 </div>
+                                <div class="col-12 pt-3 mt-2">
+                                    <div class="row row-cols-2 row-cols-lg-5 g-4">
+                                        <div class="col productCard position-relative">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="productImgBox">
+                                                        <div class="owl-carousel owl-theme productImgCarousel">
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="productDetailBox">
+                                                        <a href="javascript:;" class="productName stretched-link">
+                                                            Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
+                                                        </a>
+                                                        <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
+                                                        <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col productCard position-relative">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="productImgBox">
+                                                        <div class="owl-carousel owl-theme productImgCarousel">
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="productDetailBox">
+                                                        <a href="javascript:;" class="productName stretched-link">
+                                                            Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
+                                                        </a>
+                                                        <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
+                                                        <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col productCard position-relative">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="productImgBox">
+                                                        <div class="owl-carousel owl-theme productImgCarousel">
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="productDetailBox">
+                                                        <a href="javascript:;" class="productName stretched-link">
+                                                            Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
+                                                        </a>
+                                                        <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
+                                                        <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col productCard position-relative">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="productImgBox">
+                                                        <div class="owl-carousel owl-theme productImgCarousel">
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="productDetailBox">
+                                                        <a href="javascript:;" class="productName stretched-link">
+                                                            Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
+                                                        </a>
+                                                        <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
+                                                        <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col productCard position-relative">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="productImgBox">
+                                                        <div class="owl-carousel owl-theme productImgCarousel">
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="productDetailBox">
+                                                        <a href="javascript:;" class="productName stretched-link">
+                                                            Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
+                                                        </a>
+                                                        <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
+                                                        <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col productCard position-relative">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="productImgBox">
+                                                        <div class="owl-carousel owl-theme productImgCarousel">
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="productDetailBox">
+                                                        <a href="javascript:;" class="productName stretched-link">
+                                                            Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
+                                                        </a>
+                                                        <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
+                                                        <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="row row-cols-2 row-cols-lg-5 g-4">
-                                <div class="col productCard position-relative">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="productImgBox">
-                                                <div class="owl-carousel owl-theme productImgCarousel">
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="productDetailBox">
-                                                <a href="javascript:;" class="productName stretched-link">
-                                                    Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
-                                                </a>
-                                                <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
-                                                <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                    <hr class="bigSectionDivider">
+                    <div class="container-fluid productFluidContainer">
+                        <div class="container productContainer">
+                            <div class="row py-3 mb-3">
+                                <div class="col-12 sticky-top bg-white stickySectionHeader">
+                                    <div class="productMainHeading">100% Pure Ghee</div>
                                 </div>
-                                <div class="col productCard position-relative">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="productImgBox">
-                                                <div class="owl-carousel owl-theme productImgCarousel">
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                <div class="col-12 pt-3 mt-2">
+                                    <div class="row row-cols-2 row-cols-lg-5 g-4">
+                                        <div class="col productCard position-relative">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="productImgBox">
+                                                        <div class="owl-carousel owl-theme productImgCarousel">
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="productDetailBox">
+                                                        <a href="javascript:;" class="productName stretched-link">
+                                                            Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
+                                                        </a>
+                                                        <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
+                                                        <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="productDetailBox">
-                                                <a href="javascript:;" class="productName stretched-link">
-                                                    Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
-                                                </a>
-                                                <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
-                                                <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col productCard position-relative">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="productImgBox">
-                                                <div class="owl-carousel owl-theme productImgCarousel">
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                        <div class="col productCard position-relative">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="productImgBox">
+                                                        <div class="owl-carousel owl-theme productImgCarousel">
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
+                                                            <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="productDetailBox">
-                                                <a href="javascript:;" class="productName stretched-link">
-                                                    Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
-                                                </a>
-                                                <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
-                                                <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col productCard position-relative">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="productImgBox">
-                                                <div class="owl-carousel owl-theme productImgCarousel">
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
+                                                <div class="col-12">
+                                                    <div class="productDetailBox">
+                                                        <a href="javascript:;" class="productName stretched-link">
+                                                            Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
+                                                        </a>
+                                                        <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
+                                                        <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="productDetailBox">
-                                                <a href="javascript:;" class="productName stretched-link">
-                                                    Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
-                                                </a>
-                                                <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
-                                                <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col productCard position-relative">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="productImgBox">
-                                                <div class="owl-carousel owl-theme productImgCarousel">
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product1.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product2.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product3.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product4.webp" alt="product image"></div></div>
-                                                    <div class="item"><div class="cardImg"> <img src="./assets/img/product5.webp" alt="product image"></div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="productDetailBox">
-                                                <a href="javascript:;" class="productName stretched-link">
-                                                    Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
-                                                </a>
-                                                <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
-                                                <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
                                             </div>
                                         </div>
                                     </div>
@@ -562,6 +635,40 @@
                 </div>
             </div>
         </main>
+        <div class="offcanvas offcanvas-end menuOffcanvas" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvasLabel">
+            <div class="offcanvas-header p-0">
+                <div class="offcanvas-title" id="menuOffcanvasLabel">Menu</div>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+                <ul class="m-0 p-0 list-unstyled menuLinks">
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Noodles</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Vermicelli</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Pasta</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Flakes</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Snacks</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Healthy Snacks</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Tea Coffee</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Health Mix</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Milk Mix</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Handmade Soaps</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Multi Purpose Oils</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Copper Items</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Noodles</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Vermicelli</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Pasta</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Flakes</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Snacks</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Healthy Snacks</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Tea Coffee</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Health Mix</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Milk Mix</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Handmade Soaps</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Multi Purpose Oils</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Copper Items</a></li>
+                </ul>
+            </div>
+        </div>
         <script src="assets/libs/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="assets/libs/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
         <script type="module" src="assets/js/main.min.js"></script>
