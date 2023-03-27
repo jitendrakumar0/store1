@@ -94,6 +94,26 @@
                     cursor: pointer;
                 }
             }
+            & .navbarThirdRow {
+                & .backAnchor {
+                    display: inline-flex;
+                    align-items: center;
+                    & img {}
+                    & .productName {
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-weight: 500;
+                        color: $black;
+                        display: block;
+                        margin: 0 2px 0 8px;
+                    }
+                    & .productQty {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $black;
+                    }
+                }
+            }
         }
         .productFluidContainer{
             & .productContainer{
