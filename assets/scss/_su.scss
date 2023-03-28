@@ -269,8 +269,10 @@ nav {
                         max-width: 216px;
                         color: #fff;
                         background-color: #146EB4;
+                        border: 1px solid #146eb4;
                         &:hover {
                             background-color: #177ccb;
+                            border-color: #177ccb;
                         }
                     }
                 }
@@ -580,12 +582,11 @@ nav {
                     padding: 0 16px !important;
                     & .mySwiper {
                         width: 100%;
+                        margin-top: 16px;
                         & .swiper-wrapper {
                             flex-direction: row;
                             width: 100%;
                             & .swiper-slide {
-                                margin-right: 12px;
-                                margin-top: 16px;
                                 width: 80px !important ;
                                 height: 90px;
                                 &.swiper-slide-thumb-active {
@@ -841,6 +842,58 @@ nav {
             }
         }
         .bigSectionDivider {
+        }
+        .stickyButton {
+            position: sticky;
+            bottom: 0;
+            z-index: 99;
+            background-color: #fff;
+            & .btnOuter {
+                margin: 20px 0px;
+                gap: 16px;
+                & .addBagBtn {
+                    width: 100%;
+                    height: 48px;
+                    border-radius: 6px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    border: 1px solid #146EB4;
+                    color: #146EB4;
+                    background-color: #fff;
+                    padding: 4px 11px;
+                    min-width: 80px;
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    max-width: 100%;
+                    font-weight: 500;
+                    &:hover {
+                        background-color: rgba(#146EB4, $alpha: 0.1);
+                    }
+                }
+                & .buyNowBtn {
+                    height: 48px;
+                    font-size: 16px;
+                    line-height: 24px;
+                    border-radius: 4px;
+                    padding: 4px 11px;
+                    min-width: 80px;
+                    flex: 1;
+                    display: flex;
+                    font-weight: 500;
+                    align-items: center;
+                    justify-content: center;
+                    max-width: 100%;
+                    color: #fff;
+                    background-color: #146EB4;
+                    border: 1px solid #146eb4;
+                    &:hover {
+                        background-color: #177ccb;
+                        border-color: #177ccb;
+                    }
+                }
+            }
         }
     }
 
