@@ -106,32 +106,39 @@
             <div class="row mainInner">
                 <div class="col-12 px-0 flex-fill" data-page-name="categoriesPage">
                     <!-- * Header -->
-                    <navbar class="container-fluid navbar topNavbar py-3">
+                    <navbar class="container-fluid navbar topNavbar py-3 sticky-top bg-white">
                         <div class="container">
-                            <div class="row navbarTopRow w-100 align-items-center justify-content-between mx-0 pb-3">
+                            <div class="row navbarTopRow w-100 align-items-center justify-content-between mx-0 pb-lg-3 d-none d-lg-flex">
                                 <div class="col-auto px-0">
                                     <a href="index.html" class="logo">
                                         <img src="./assets/img/logo/logo.webp" alt="Logo">
                                         <span>Standard Store</span>
                                     </a>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-auto d-lg-none">
+                                    <div class="menuBtn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
+                                        <img src="./assets/img/svg/menuIcon.svg" alt="menu icon">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 pt-3 pt-lg-0">
                                     <div class="serachBox position-relative">
                                         <input type="text" class="form-control shadow-none" placeholder="Search for products...">
                                         <img src="./assets/img/svg/search.svg" class="searchIcon" alt="search icon">
                                     </div>
                                 </div>
-                                <div class="col-auto px-0">
+                                <div class="col-auto px-0 d-none d-lg-block">
                                     <ul class="m-0 p-0 list-unstyled navBtnBox d-flex align-items-center">
                                         <li class="navBtn me-1">
                                             <a href="javascript:;" class="buttonAnchor">
-                                                <img src="./assets/img/svg/categoryIcon.svg" alt="">
+                                                <img src="./assets/img/svg/categoryIcon.svg" class="defaultImg" alt="">
+                                                <img src="./assets/img/svg/categoryIconActive.svg" class="activeImg d-none" alt="">
                                                 <span>Categories</span>
                                             </a>
                                         </li>
                                         <li class="navBtn me-1">
                                             <a href="javascript:;" class="buttonAnchor">
-                                                <img src="./assets/img/svg/bagIcon.svg" alt="">
+                                                <img src="./assets/img/svg/bagIcon.svg" class="defaultImg" alt="">
+                                                <img src="./assets/img/svg/bagIconActive.svg" class="activeImg d-none"  alt="">
                                                 <span>Bag</span>
                                             </a>
                                         </li>
@@ -144,7 +151,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="row mx-0 navBarBottomRow w-100 overflow-hidden position-relative">
+                            <div class="row mx-0 navBarBottomRow w-100 overflow-hidden position-relative d-none d-lg-flex">
                                 <div class="col-12 px-0">
                                     <ul class="m-0 p-0 list-unstyled d-flex align-items-center navLinks">
                                         <li class="navLinkItem"><a class="navLinkAnchor" href="javascript:;">Cold Pressed Oils</a></li>
@@ -164,32 +171,61 @@
                                         <li class="navLinkItem"><a class="navLinkAnchor" href="javascript:;">Cold</a></li>
                                     </ul>
                                 </div>
-                                <div class="menuBtn">
+                                <div class="menuBtn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
                                     <img src="./assets/img/svg/menuIcon.svg" alt="menu icon">
                                 </div>
                             </div>
-                            <!-- <div class="row mx-0 navbarThirdRow w-100">
+                            <div class="row mx-0 navbarThirdRow w-100 d-lg-none">
                                 <div class="col">
                                     <a href="index.html" class="backAnchor">
                                         <img src="./assets/img/svg/rightArrow.svg" alt="rightArrow">
-                                        <span class="productName">Cold Pressed Oils</span>
-                                        <span class="productQty">(6 items)</span>
+                                        <div class="d-flex align-items-lg-center flex-column flex-lg-row">
+                                            <span class="productName">Categories</span>
+                                        </div>
                                     </a>
                                 </div>
-                                <div class="col-auto">
+                                <div class="col-auto d-none d-lg-block">
                                     <div class="dropdown sortDropdown">
                                         <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span>Sort by</span>
-                                            <span>Featured</span>
+                                            <span id="sortValue">Featured</span>
                                         </a>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <ul class="dropdown-menu dropdown-menu-end p-3 border-0 shadow">
+                                            <li class="radioBox mb-3">
+                                                <input type="radio" class="radioInput me-2" name="sort" id="sort1" checked>
+                                                <label class="formLabel sortLabel" for="sort1">
+                                                    Featured
+                                                </label>
+                                            </li>
+                                            <li class="radioBox mb-3">
+                                                <input type="radio" class="radioInput me-2" name="sort" id="sort2">
+                                                <label class="formLabel sortLabel" for="sort2">
+                                                    Discount
+                                                </label>
+                                            </li>
+                                            <li class="radioBox mb-3">
+                                                <input type="radio" class="radioInput me-2" name="sort" id="sort3">
+                                                <label class="formLabel sortLabel" for="sort3">
+                                                    Price low to high
+                                                </label>
+                                            </li>
+                                            <li class="radioBox">
+                                                <input type="radio" class="radioInput me-2" name="sort" id="sort4">
+                                                <label class="formLabel sortLabel" for="sort4">
+                                                    Price high to low
+                                                </label>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
-                            </div> -->
+                                <div class="col-auto d-lg-none">
+                                    <ul class="m-0 p-0 list-unstyled mobMenuLinks d-flex align-items-center">
+                                        <li class="mobMenuItem"><a class="mobMenuLink" href="javascript:;"><img src="./assets/img/svg/searchDark.svg" alt="search icon"></a></li>
+                                        <li class="mobMenuItem px-3"><a class="mobMenuLink" href="javascript:;"><img src="./assets/img/svg/categoryIcon.svg" alt="category icon"></a></li>
+                                        <li class="mobMenuItem"><a class="mobMenuLink" href="javascript:;"><img src="./assets/img/svg/bagIcon.svg" alt="bag icon"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </navbar>
                     <!-- * Header End -->
@@ -542,20 +578,51 @@
                     </footer>
                     <!-- * Footer End -->
 
-                    <!-- ! bag Section Fixed -->
+                    <!-- ! bottom fixed Section Fixed -->
                     <div class="container-fluid bg-white fixed-bottom fotterFixed d-lg-none">
                         <div class="row justify-content-center align-items-center innerFooter gx-sm-3 gx-2">
-                            <div class="col-auto"><a href="javascript:;" class="d-flex fixedBtn active rounded-pill align-items-center gap-sm-2 gap-1"><div class="pageImg1 pageImage d-flex"><img src="assets/img/svg/home.svg" alt="" class="h-100"></div><div class="pageImg2 pageImage d-none"><img src="assets/img/svg/homefill_icon.svg" alt="" class="h-100"></div> Home</a></div>
+                            <div class="col-auto"><a href="javascript:;" class="d-flex fixedBtn rounded-pill align-items-center gap-sm-2 gap-1"><div class="pageImg1 pageImage d-flex"><img src="assets/img/svg/home.svg" alt="" class="h-100"></div><div class="pageImg2 pageImage d-none"><img src="assets/img/svg/homefill_icon.svg" alt="" class="h-100"></div> Home</a></div>
                             <div class="col-auto"><a href="javascript:;" class="d-flex fixedBtn rounded-pill align-items-center gap-sm-2 gap-1"><div class="pageImg1 pageImage d-flex"><img src="assets/img/svg/bagIcon.svg" alt="" class="h-100"></div><div class="pageImg2 pageImage d-none"><img src="assets/img/svg/bagIcoActive.svg" alt="" class="h-100"></div> Bag</a></div>
                             <div class="col-auto"><a href="javascript:;" class="d-flex fixedBtn rounded-pill align-items-center gap-sm-2 gap-1"><div class="pageImg1 pageImage d-flex"><img src="assets/img/svg/accountIcon.svg" alt="" class="h-100"></div><div class="pageImg2 pageImage d-none"><img src="assets/img/svg/accountActive.svg" alt="" class="h-100"></div> Account</a></div>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </main>
+        <div class="offcanvas offcanvas-end menuOffcanvas" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvasLabel">
+            <div class="offcanvas-header p-0">
+                <div class="offcanvas-title" id="menuOffcanvasLabel">Menu</div>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+                <ul class="m-0 p-0 list-unstyled menuLinks">
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Noodles</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Vermicelli</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Pasta</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Flakes</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Snacks</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Healthy Snacks</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Tea Coffee</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Health Mix</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Milk Mix</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Handmade Soaps</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Multi Purpose Oils</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Copper Items</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Noodles</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Vermicelli</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Pasta</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Flakes</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Millet Snacks</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Healthy Snacks</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Tea Coffee</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Health Mix</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Milk Mix</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Handmade Soaps</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Multi Purpose Oils</a></li>
+                    <li class="menuLinkItem"><a href="javascript:;" class="linkAnchor">Copper Items</a></li>
+                </ul>
+            </div>
+        </div>
         <script src="assets/libs/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="assets/libs/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
         <script type="module" src="assets/js/main.min.js"></script>

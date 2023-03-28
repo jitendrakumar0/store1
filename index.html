@@ -80,18 +80,18 @@
         <meta property="og:url" content="">
         <meta property="og:title" content="Home Page | store1 Website">
         <meta property="og:description" content="This store1 website">
-        <meta property="og:image" content="./assets/img/logo/favicon.png">
-        <meta property="og:image:secure_url" content="./assets/img/logo/favicon.png">
+        <meta property="og:image" content="./assets/img/logo/logo.webp">
+        <meta property="og:image:secure_url" content="./assets/img/logo/logo.webp">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo/favicon.png">
-        <link rel="shortcut icon" type="image/png" sizes="32x32" href="./assets/img/logo/favicon.png">
-        <link rel="shortcut icon" type="image/png" sizes="16x16" href="./assets/img/logo/favicon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo/logo.webp">
+        <link rel="shortcut icon" type="image/png" sizes="32x32" href="./assets/img/logo/logo.webp">
+        <link rel="shortcut icon" type="image/png" sizes="16x16" href="./assets/img/logo/logo.webp">
 
         <meta name="classification" content="educate" />
         <link rel="canonical" href="" />
         <meta name="robots" content="noindex, nofollow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-        <meta name="msapplication-TileImage" content="./assets/img/logo/favicon.png">
-        <link rel="apple-touch-icon-precomposed" href="./assets/img/logo/favicon.png">
+        <meta name="msapplication-TileImage" content="./assets/img/logo/logo.webp">
+        <link rel="apple-touch-icon-precomposed" href="./assets/img/logo/logo.webp">
         
 
         <!-- style -->
@@ -104,17 +104,17 @@
     <body>
         <main class="container-fluid">
             <div class="row mainInner">
-                <div class="col-12 px-0 flex-fill" data-page-name="landing">
-                    <navbar class="container-fluid navbar topNavbar py-3 sticky-top bg-white">
+                <div class="col-12 px-0 flex-fill bodyScrollPart" data-page-name="landing">
+                    <navbar class="container-fluid navbar topNavbar py-3 sticky-lg-top bg-white">
                         <div class="container">
                             <div class="row navbarTopRow w-100 align-items-center justify-content-between mx-0 pb-lg-3">
-                                <div class="col-auto px-0">
+                                <div class="col-auto px-0 mobHiddenSticky">
                                     <a href="index.html" class="logo">
                                         <img src="./assets/img/logo/logo.webp" alt="Logo">
                                         <span>Standard Store</span>
                                     </a>
                                 </div>
-                                <div class="col-auto d-lg-none">
+                                <div class="col-auto d-lg-none mobHiddenSticky">
                                     <div class="menuBtn" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas">
                                         <img src="./assets/img/svg/menuIcon.svg" alt="menu icon">
                                     </div>
@@ -632,6 +632,14 @@
                             </div>
                         </div>
                     </footer>
+                     <!-- ! bottom fixed Section Fixed -->
+                     <div class="container-fluid bg-white fixed-bottom fotterFixed d-lg-none">
+                        <div class="row justify-content-center align-items-center innerFooter gx-sm-3 gx-2">
+                            <div class="col-auto"><a href="javascript:;" class="d-flex fixedBtn active rounded-pill align-items-center gap-sm-2 gap-1"><div class="pageImg1 pageImage d-flex"><img src="assets/img/svg/home.svg" alt="" class="h-100"></div><div class="pageImg2 pageImage d-none"><img src="assets/img/svg/homefill_icon.svg" alt="" class="h-100"></div> Home</a></div>
+                            <div class="col-auto"><a href="javascript:;" class="d-flex fixedBtn rounded-pill align-items-center gap-sm-2 gap-1"><div class="pageImg1 pageImage d-flex"><img src="assets/img/svg/bagIcon.svg" alt="" class="h-100"></div><div class="pageImg2 pageImage d-none"><img src="assets/img/svg/bagIcoActive.svg" alt="" class="h-100"></div> Bag</a></div>
+                            <div class="col-auto"><a href="javascript:;" class="d-flex fixedBtn rounded-pill align-items-center gap-sm-2 gap-1"><div class="pageImg1 pageImage d-flex"><img src="assets/img/svg/accountIcon.svg" alt="" class="h-100"></div><div class="pageImg2 pageImage d-none"><img src="assets/img/svg/accountActive.svg" alt="" class="h-100"></div> Account</a></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -672,5 +680,17 @@
         <script src="assets/libs/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="assets/libs/node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
         <script type="module" src="assets/js/main.min.js"></script>
+        <script>
+            $('.bodyScrollPart').scroll(function () {
+                var scroll = $('.bodyScrollPart').scrollTop();
+                if (scroll <= 52) {
+                    console.log("hello")
+                    $(".topNavbar").removeClass("nav-active");
+                } else {
+                    console.log("hii")
+                    $(".topNavbar").addClass("nav-active");
+                }
+            });
+        </script>
     </body>
 </html>
