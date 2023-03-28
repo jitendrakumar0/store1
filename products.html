@@ -230,7 +230,7 @@
                         </div>
                     </navbar>
                     <!-- Breadcrumb -->
-                    <div class="container-fliuid">
+                    <div class="container-fliuid d-none d-lg-block">
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
@@ -388,7 +388,7 @@
                                                     </div>
                                                 </div>
                                                 <hr class="bigSectionDivider mt-3 d-lg-none d-none d-md-block">
-                                                <div class="col-12">
+                                                <div class="col-12 d-none d-md-block">
                                                     <div class="row btnOuter mx-0">
                                                         <a class="btn addBagBtn col-auto" href="javascript:;">Add to bag</a>
                                                         <a class="btn buyNowBtn col-auto" href="javascript:;">Buy Now</a>
@@ -660,6 +660,16 @@
                           </div>
                       </div>
                   </footer>
+                  <div class="container-fluid stickyButton d-md-none">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row btnOuter mx-0">
+                                <a class="btn addBagBtn col-auto" href="javascript:;">Add to bag</a>
+                                <a class="btn buyNowBtn col-auto" href="javascript:;">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </main>
@@ -705,24 +715,24 @@
         <script>
             var swiper = new Swiper(".mySwiper", {
             breakpoints: {
-                640: {
-                slidesPerView: 5,
-                spaceBetween: 0,
+                0: {
+                slidesPerView: "auto",
+                spaceBetween: 10,
+                direction: "horizontal",
+                loop: false,
                 },
                 768: {
-                // slidesPerView: 4,
-                spaceBetween: 0,
-                direction: "horizontal",
-                loop: true,
+                slidesPerView: 4,
+                spaceBetween: 10,
                 },
                 992: {
-                slidesPerView: 5,
+                slidesPerView: 6,
                 spaceBetween: 12,
                 direction: "vertical",
                 },
             },
             spaceBetween: 12,
-            slidesPerView: 5,
+            slidesPerView: 6,
             freeMode: true,
             watchSlidesProgress: true,
             });

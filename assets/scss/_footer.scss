@@ -87,7 +87,44 @@
 
 @include media-breakpoint-down(lg) {}
 
-@include media-breakpoint-down(md) {}
+@include media-breakpoint-down(md) {
+  .footer {
+    & .footerInner {
+      & .items {
+        & .item {
+          & .itemInner {
+            & .itemImg {
+              & img {
+
+              }
+            }
+            & .itemTitle {
+            }
+            & .itemContent {
+            }
+          }
+        }
+      }
+      & .followSocials {
+        & .followUsHeading {
+        }
+        & .socials {
+          & .social {
+            & a {
+              & span {
+                & img {
+                }
+                &:last-child {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 @include media-breakpoint-down(sm) {}
 
