@@ -3,6 +3,7 @@
     @include media-breakpoint(basic) {
         .topNavbar {
             z-index: 1021;
+            border-bottom: 1px solid $gray-200;
             & .navbarTopRow {
                 & .logo {
                     color: $black;
@@ -210,6 +211,9 @@
         }
         .productFluidContainer{
             & .productContainer{
+                & .stickySectionHeader {
+                    top: 123px;
+                }
                 & .productMainHeading{
                     flex-direction: row;
                     justify-content: space-between;
@@ -423,6 +427,52 @@
                 }
             }
         }
+        .productFluidContainer{
+            & .productContainer{
+                & .stickySectionHeader {
+                }
+                & .productMainHeading{
+                }
+                & .productCard  {
+                    & .productImgBox {
+                        & .productImgCarousel{
+                            & .owl-stage-outer{
+                                & .cardImg{
+                                    & img{
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .productDetailBox{
+                        & .productName{
+                        }
+                        & .productPrice{
+                            & span{
+                                &:first-child{
+                                }
+                                &:last-child{
+                                }
+                            }
+                        }
+                        & .addmoreBtn{
+                            &:hover{
+                            }
+                            & img{
+                            }
+                        }
+                    }
+                    &:hover {
+                        & .productImgBox {
+                            & .cardImg {
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-down(xl) {
@@ -575,8 +625,12 @@
                     & img {
                     }
                     & .productName {
+                        font-size: 16px;
+                        line-height: 24px;
                     }
                     & .productQty {
+                        font-size: 12px;
+                        line-height: 16px;
                     }
                 }
                 & .sortDropdown {
@@ -598,6 +652,16 @@
                     }
                 }
             }
+            &.nav-active {
+                position: sticky;
+                top: -52px;
+                z-index: 1021;
+                padding-top: 0 !important;
+                & .mobHiddenSticky {
+                    // height: 0px;
+                    // overflow: hidden;
+                }
+            }
         }
         .menuOffcanvas {
             width: 100% !important;
@@ -609,6 +673,53 @@
                 & .menuLinks {
                     & .menuLinkItem {
                         & .linkAnchor {
+                        }
+                    }
+                }
+            }
+        }
+        .productFluidContainer{
+            & .productContainer{
+                & .stickySectionHeader {
+                    top: 72px;
+                }
+                & .productMainHeading{
+                }
+                & .productCard  {
+                    & .productImgBox {
+                        & .productImgCarousel{
+                            & .owl-stage-outer{
+                                & .cardImg{
+                                    & img{
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .productDetailBox{
+                        & .productName{
+                        }
+                        & .productPrice{
+                            & span{
+                                &:first-child{
+                                }
+                                &:last-child{
+                                }
+                            }
+                        }
+                        & .addmoreBtn{
+                            &:hover{
+                            }
+                            & img{
+                            }
+                        }
+                    }
+                    &:hover {
+                        & .productImgBox {
+                            & .cardImg {
+                                & img {
+                                }
+                            }
                         }
                     }
                 }
@@ -709,6 +820,52 @@
                 }
             }
         }
+        .productFluidContainer{
+            & .productContainer{
+                & .stickySectionHeader {
+                }
+                & .productMainHeading{
+                }
+                & .productCard  {
+                    & .productImgBox {
+                        & .productImgCarousel{
+                            & .owl-stage-outer{
+                                & .cardImg{
+                                    & img{
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .productDetailBox{
+                        & .productName{
+                        }
+                        & .productPrice{
+                            & span{
+                                &:first-child{
+                                }
+                                &:last-child{
+                                }
+                            }
+                        }
+                        & .addmoreBtn{
+                            &:hover{
+                            }
+                            & img{
+                            }
+                        }
+                    }
+                    &:hover {
+                        & .productImgBox {
+                            & .cardImg {
+                                & img {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @include media-breakpoint-down(sm) {
@@ -766,12 +923,8 @@
                     & img {
                     }
                     & .productName {
-                        font-size: 16px;
-                        line-height: 24px;
                     }
                     & .productQty {
-                        font-size: 12px;
-                        line-height: 16px;
                     }
                 }
                 & .sortDropdown {
@@ -803,6 +956,52 @@
                 & .menuLinks {
                     & .menuLinkItem {
                         & .linkAnchor {
+                        }
+                    }
+                }
+            }
+        }
+        .productFluidContainer{
+            & .productContainer{
+                & .stickySectionHeader {
+                }
+                & .productMainHeading{
+                }
+                & .productCard  {
+                    & .productImgBox {
+                        & .productImgCarousel{
+                            & .owl-stage-outer{
+                                & .cardImg{
+                                    & img{
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    & .productDetailBox{
+                        & .productName{
+                        }
+                        & .productPrice{
+                            & span{
+                                &:first-child{
+                                }
+                                &:last-child{
+                                }
+                            }
+                        }
+                        & .addmoreBtn{
+                            &:hover{
+                            }
+                            & img{
+                            }
+                        }
+                    }
+                    &:hover {
+                        & .productImgBox {
+                            & .cardImg {
+                                & img {
+                                }
+                            }
                         }
                     }
                 }

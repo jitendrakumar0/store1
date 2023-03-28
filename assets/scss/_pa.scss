@@ -251,6 +251,7 @@
             }
         }
         & .categoryFilterBtns{
+            height: 46px;
             & .categoryFiltercontainer{
                 border-top: 1px solid;
                 border-color: lighten($color: $black, $amount: 85);
