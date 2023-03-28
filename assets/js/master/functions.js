@@ -29,21 +29,21 @@ if(startBarToggleBtn) {
 
 
 // ? @@@@@@@@@@@@@@@@@@@@@@[  jQuery-Mask-Plugin  ]@@@@@@@@@@@@@@@@@@@@@@
-$(document).ready(function(){
-  if($('.phone').length) {
-    $('.phone').mask('+00-0000000000');
-  }
-  if($('.pincode').length) {
-    $('.pincode').mask('000000');
-  }
-  if($('.first-name').length) {
-    $('.first-name').mask('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-  }
-  if($('.last-name').length) {
-    $('.last-name').mask('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-  }
+// $(document).ready(function(){
+//   if($('.phone').length) {
+//     $('.phone').mask('+00-0000000000');
+//   }
+//   if($('.pincode').length) {
+//     $('.pincode').mask('000000');
+//   }
+//   if($('.first-name').length) {
+//     $('.first-name').mask('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+//   }
+//   if($('.last-name').length) {
+//     $('.last-name').mask('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+//   }
 
-});
+// });
 
 
 
@@ -356,62 +356,62 @@ phoneInputFields.forEach(function(phoneInputField) {
 
 
 // ? @@@@@@@@@@@@@@@@@@@@@@[  Input With Regex  ]@@@@@@@@@@@@@@@@@@@@@@
-const inputFields = document.querySelectorAll('input, textarea'); // Replace 'input' with the selector for your input fields
-inputFields.forEach(function(inputField) {
-  inputField.addEventListener('input', function(e) {
-    const type = inputField.getAttribute('type');
-    if (type === 'email' && !isValidEmail(inputField.value)) {
-      inputField.setCustomValidity('Please enter a valid email address.');
-    } else if (type === 'number' && isNaN(inputField.value)) {
-      inputField.setCustomValidity('Please enter a valid number.');
-    } else if (type === 'tel' && inputField.classList.contains('phone') && !isValidPhoneNumber(inputField.value)) {
-      inputField.setCustomValidity('Please enter a valid phone number.');
-    } else if (type === 'text' && inputField.classList.contains('first-name') && !isValidName(inputField.value)) {
-      inputField.setCustomValidity('Please enter a valid first name.');
-    } else if (type === 'text' && inputField.classList.contains('last-name') && !isValidName(inputField.value)) {
-      inputField.setCustomValidity('Please enter a valid last name.');
-    } else if (type === 'tel' && inputField.classList.contains('pincode') && !isValidPincode(inputField.value)) {
-      inputField.setCustomValidity('Please enter a valid Indian PIN code.');
-    } else {
-      inputField.setCustomValidity('');
-    }
+// const inputFields = document.querySelectorAll('input, textarea'); // Replace 'input' with the selector for your input fields
+// inputFields.forEach(function(inputField) {
+//   inputField.addEventListener('input', function(e) {
+//     const type = inputField.getAttribute('type');
+//     if (type === 'email' && !isValidEmail(inputField.value)) {
+//       inputField.setCustomValidity('Please enter a valid email address.');
+//     } else if (type === 'number' && isNaN(inputField.value)) {
+//       inputField.setCustomValidity('Please enter a valid number.');
+//     } else if (type === 'tel' && inputField.classList.contains('phone') && !isValidPhoneNumber(inputField.value)) {
+//       inputField.setCustomValidity('Please enter a valid phone number.');
+//     } else if (type === 'text' && inputField.classList.contains('first-name') && !isValidName(inputField.value)) {
+//       inputField.setCustomValidity('Please enter a valid first name.');
+//     } else if (type === 'text' && inputField.classList.contains('last-name') && !isValidName(inputField.value)) {
+//       inputField.setCustomValidity('Please enter a valid last name.');
+//     } else if (type === 'tel' && inputField.classList.contains('pincode') && !isValidPincode(inputField.value)) {
+//       inputField.setCustomValidity('Please enter a valid Indian PIN code.');
+//     } else {
+//       inputField.setCustomValidity('');
+//     }
 
-    // For textarea, show character count and increase height
-    if (inputField.classList.contains('message') && inputField.maxLength !== -1) {
-      const remainingChars = inputField.maxLength - inputField.value.length;
-      const counter = inputField.parentNode.querySelector('.char-count');
-      if (counter) {
-        counter.textContent = `Characters left: ${remainingChars}`;
-      }
-      inputField.style.height = 'auto'; // Reset height to auto
-      inputField.style.height = inputField.scrollHeight + 'px'; // Set height to content height
-    }
-  });
-});
+//     // For textarea, show character count and increase height
+//     if (inputField.classList.contains('message') && inputField.maxLength !== -1) {
+//       const remainingChars = inputField.maxLength - inputField.value.length;
+//       const counter = inputField.parentNode.querySelector('.char-count');
+//       if (counter) {
+//         counter.textContent = `Characters left: ${remainingChars}`;
+//       }
+//       inputField.style.height = 'auto'; // Reset height to auto
+//       inputField.style.height = inputField.scrollHeight + 'px'; // Set height to content height
+//     }
+//   });
+// });
 
-function isValidEmail(email) {
-  // Use a regular expression to check if the email is valid
-  const emailRegex = /^[\w\.-]*[a-zA-z][\w\.-]*@([\w-]+\.)+[\w-]{2,4}$/;
-  return emailRegex.test(email);
-}
+// function isValidEmail(email) {
+//   // Use a regular expression to check if the email is valid
+//   const emailRegex = /^[\w\.-]*[a-zA-z][\w\.-]*@([\w-]+\.)+[\w-]{2,4}$/;
+//   return emailRegex.test(email);
+// }
 
-function isValidPhoneNumber(phoneNumber) {
-  // Use a regular expression to check if the phone number is valid
-  const phoneRegex = /^\+91-[6-9]\d{9}$/;
-  return phoneRegex.test(phoneNumber);
-}
+// function isValidPhoneNumber(phoneNumber) {
+//   // Use a regular expression to check if the phone number is valid
+//   const phoneRegex = /^\+91-[6-9]\d{9}$/;
+//   return phoneRegex.test(phoneNumber);
+// }
 
-function isValidName(name) {
-  // Use a regular expression to check if the name is valid
-  const nameRegex = /^[\w\., -]*[a-zA-z].*[\w\., -]*$/;
-  return nameRegex.test(name);
-}
+// function isValidName(name) {
+//   // Use a regular expression to check if the name is valid
+//   const nameRegex = /^[\w\., -]*[a-zA-z].*[\w\., -]*$/;
+//   return nameRegex.test(name);
+// }
 
-function isValidPincode(pincode) {
-  // Use a regular expression to check if the PIN code is valid
-  const pincodeRegex = /^\d{6}$/;
-  return pincodeRegex.test(pincode);
-}
+// function isValidPincode(pincode) {
+//   // Use a regular expression to check if the PIN code is valid
+//   const pincodeRegex = /^\d{6}$/;
+//   return pincodeRegex.test(pincode);
+// }
 
 
 // ? @@@@@@@@@@@@@@@@@@@@@@[  Invalid Form  ]@@@@@@@@@@@@@@@@@@@@@@
