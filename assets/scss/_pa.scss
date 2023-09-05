@@ -5,9 +5,9 @@
         .categoryContainerFluid{
             & .categoryContainer{
                 & .categoryBreadcrumb{
-                    // margin-top: 24px;
-                    // margin-bottom: 20px;
                     & .categoryBreadcrumbul{
+                        padding-top: 24px;
+                        padding-bottom: 20px;
                         & .categorybreadcrumbli{
                             color: lighten($color: $black, $amount: 55);
                             font-size: 14px;
@@ -27,7 +27,7 @@
                         border: 1px solid $gray-300;
                         border-radius: 5px;
                         & .filterHeader{
-                            padding: 20px;
+                            padding: 16px;
                             border-bottom: 1px solid $gray-300;
                             & .filtertxt{
                                 font-size: 16px;
@@ -63,12 +63,14 @@
                                 display: flex;
                                 align-items: center;
                                 margin-bottom: 10px;
+                                min-height: unset;
                                 &:hover{
                                     cursor: pointer;
                                 }
                                 & .formInp{
                                     width: 20px;
                                     height: 20px;
+                                    margin-top: 0;
                                     &:hover{
                                         cursor: pointer;
                                     }
@@ -110,12 +112,15 @@
                                 display: flex;
                                 align-items: center;
                                 margin-bottom: 10px;
+                                margin-bottom: 10px;
+                                min-height: unset;
                                 &:hover{
                                     cursor: pointer;
                                 }
                                 & .formInp{
                                     width: 20px;
                                     height: 20px;
+                                    margin-top: 0;
                                     &:hover{
                                         cursor: pointer;
                                     }
@@ -217,12 +222,19 @@
                                 z-index: 9;
                                 &:hover{
                                     background-color: #d5e2ec;
+                                    cursor: pointer;
                                 }
                                 & img{
                                     margin-left: 5px;
                                     height: 12px;
                                     width: 12px;
                                 }
+                            }
+                            & .outOfStock{
+                                color: $red;
+                                font-size: 14px;
+                                line-height: 18px;
+                                font-weight: 500;
                             }
                         }
                         &:hover {
@@ -349,6 +361,12 @@
             width: 20px;
             accent-color: $black;
         }
+        & .circle{
+            font-size: 14px;
+            &.active{
+                font-weight: 500;
+            }
+        }
     }
     & .offcanvasFooter{
         padding: 16px;
@@ -413,8 +431,8 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 10px;
-                &:last-child{
-                    margin-bottom: 0 !important;
+                &:last-child {
+                    margin-bottom: 0;
                 }
                 &:hover{
                     cursor: pointer;
@@ -468,6 +486,9 @@
                 display: flex;
                 align-items: center;
                 margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
                 &:hover{
                     cursor: pointer;
                 }
@@ -500,6 +521,7 @@
     }
     & .offcanvasFooter{
         padding: 16px;
+        border-top: 1px solid $gray-300;
         & .clearBtn{
             width: 100%;
             height: 48px;

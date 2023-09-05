@@ -206,10 +206,10 @@
                     </navbar>
                     <div class="container-fluid categoryContainerFluid pt-3 pt-lg-0">
                         <div class="container categoryContainer">
-                            <div class="row d-none d-lg-flex">
-                                <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 d-lg-block d-none">
                                     <nav aria-label="breadcrumb" class="categoryBreadcrumb">
-                                    <ol class="breadcrumb categoryBreadcrumbul">
+                                    <ol class="breadcrumb categoryBreadcrumbul m-0">
                                         <li class="breadcrumb-item categorybreadcrumbli active">
                                             <a class="categorybreadcrumbanchor" href="#">Home</a>
                                         </li>
@@ -222,7 +222,7 @@
                             <div class="row">
                                 <div class="col-auto categoryLeftPart d-lg-block d-none">
                                     <div class="categoryFilterbox">
-                                        <div class="filterHeader d-flex justify-content-between">
+                                        <div class="filterHeader d-flex justify-content-between align-items-center">
                                             <div class="filtertxt">Filters</div>
                                             <div class="delete">Clear all</div>
                                         </div>
@@ -309,7 +309,8 @@
                                                             Cold Pressed Groundnut oil Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, velit.
                                                         </a>
                                                         <div class="productPrice">₹65<span>₹95</span><span>(28% OFF)</span></div>
-                                                        <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div>
+                                                        <!-- <div class="addmoreBtn">ADD <img src="./assets/img/svg/plusicon.svg" alt="Image of plus icon" srcset=""></div> -->
+                                                        <div class="outOfStock">Out Of Stock</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -540,7 +541,7 @@
             <form class="d-flex  flex-column">
                 <div class="radioBtnContainer d-flex align-items-center">
                     <input type="radio" class="sortRadioInput" checked>
-                    <label for="aa1" class="circle ms-3">Featured</label>
+                    <label for="aa1" class="circle active ms-3">Featured</label>
                 </div>
                 
                 <div class="radioBtnContainer d-flex align-items-center mt-2">
@@ -561,10 +562,10 @@
         </div>
         <div class="offcanvas-footer offcanvasFooter">
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 pe-2">
                     <button class="clearBtn">Clear</button>
                 </div>
-                <div class="col-6">
+                <div class="col-6 ps-2">
                     <button class="applyBtn">Apply</button>
                 </div>
             </div> 
@@ -642,10 +643,10 @@
             </div>
             <div class="offcanvas-footer offcanvasFooter">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-6 pe-2">
                         <button class="clearBtn">Clear</button>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 ps-2">
                         <button class="applyBtn">Apply</button>
                     </div>
                 </div> 
